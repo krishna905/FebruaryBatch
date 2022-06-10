@@ -1,4 +1,4 @@
-package BinaryTreeStaticData;
+package BinaryTree.BinaryTreeStaticData;
 
 public class BinaryTree {
     static Node root;
