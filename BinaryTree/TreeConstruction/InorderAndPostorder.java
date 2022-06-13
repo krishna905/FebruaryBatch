@@ -51,8 +51,10 @@ public class InorderAndPostorder {
 
         int inorderIndex = search(inorder, inorderStart, inorderEnd, data);
 
-        currentRootNode.right = buildTree(inorder, postorder, inorderIndex + 1, inorderEnd);
-        currentRootNode.left = buildTree(inorder, postorder, inorderStart, inorderIndex - 1);
+        currentRootNode.right = buildTree(inorder, postorder, inorderIndex + 1, inorderEnd, postorderEnd - inorderEnd + inorderIndex, postorderEnd - 1);
+        currentRootNode.left = buildTree(inorder, postorder, inorderStart, inorderIndex - 1, postorderStart, postorderStart - inorderStart + inorderIndex - 1);
+
+        return currentRootNode;
     }
 
     public static void main(String[] args) {
