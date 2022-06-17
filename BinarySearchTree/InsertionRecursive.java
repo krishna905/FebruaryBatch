@@ -1,6 +1,6 @@
 package BinarySearchTree;
 
-public class Insertion {
+public class InsertionRecursive {
     static Node root;
 
     static class Node {
@@ -42,13 +42,13 @@ public class Insertion {
     }
 
     public static void main(String[] args) {
-        Insertion insertion = new Insertion();
+        InsertionRecursive insertionRecursive = new InsertionRecursive();
 
-        insertion.insertNode(8);
-        insertion.insertNode(3);
-        insertion.insertNode(10);
-        insertion.insertNode(1);
-        insertion.insertNode(14);
-        insertion.inorderTraversal(root);
+        insertionRecursive.insertNode(8);
+        insertionRecursive.insertNode(3);
+        insertionRecursive.insertNode(10);
+        insertionRecursive.insertNode(1);
+        insertionRecursive.insertNode(14);
+        insertionRecursive.inorderTraversal(root);
     }
 }
