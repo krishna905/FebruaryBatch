@@ -1,4 +1,4 @@
-package BinarySearchTree.LeetcodeQuestions;
+package BinarySearchTree.Questions;
 
 /*
 URL: https://leetcode.com/problems/validate-binary-search-tree/
