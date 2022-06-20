@@ -46,7 +46,7 @@ public class ReorderBinarySearchTree {
         int n = leftSubtree.size() + rightSubtree.size();
         int r = leftSubtree.size();
 
-        long result = (pascalsTriangle[n][r] * (getNumberOfWays(leftSubtree) % MOD) % MOD) * (getNumberOfWays(rightSubtree) % MOD);
+        long result = (pascalsTriangle[n][r] * (getNumberOfWays(leftSubtree) % MOD) % MOD) * getNumberOfWays(rightSubtree) % MOD;
 
         return result;
     }
@@ -65,7 +65,7 @@ public class ReorderBinarySearchTree {
 
         ReorderBinarySearchTree reorderBST = new ReorderBinarySearchTree();
         reorderBST.buildPascalsTriangle(n + 1);
-        long result = reorderBST.getNumberOfWays(tree);
+        long result = reorderBST.getNumberOfWays(tree) - 1;
 
         System.out.println(result);
     }
