@@ -1,5 +1,9 @@
 package Graph;
 
+/*
+URL: https://leetcode.com/problems/number-of-provinces/
+ */
+
 public class NumberOfProvince {
     private void dfs(int[][] isConnected, int i) {
         for(int j = 0; j < isConnected.length; j++) {
