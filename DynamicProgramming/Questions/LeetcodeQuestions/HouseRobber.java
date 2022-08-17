@@ -1,4 +1,4 @@
-package DynamicProgramming.LeetcodeQuestions;
+package DynamicProgramming.Questions.LeetcodeQuestions;
 
 /*
 URL: https://leetcode.com/problems/house-robber/
