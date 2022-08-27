@@ -76,3 +76,80 @@ public class InorderAndPostorder {
         inorderAndPostorder.postorderTraversal(root);
     }
 }
+
+
+
+
+
+
+
+
+
+
+//Simplified Code
+import java.util.*;
+
+class Node{
+    int val;
+    Node left;
+    Node right;
+    Node(int val){
+        this.val=val;
+    }
+}
+class Main{
+    static int n=0;
+    static int postOrderIdx;
+    public static void main(String args[]){
+        int inOrder[]={4,2 ,5, 1, 3 };
+        int postOrder[]={4, 5, 2, 3, 1};
+        n=inOrder.length;
+        postOrderIdx=n-1;
+
+         Node root=binaryTree(inOrder, postOrder, 0,n-1);
+         System.out.println("inorder traversal is: ");
+         inOrderTraversal(root);
+         System.out.println();
+          System.out.println("postorder traversal is: ");
+         postOrderTraversal(root);        
+    }
+     public static void inOrderTraversal(Node root){
+        if(root!=null){
+             inOrderTraversal(root.left);
+             System.out.print(root.val+" ");
+            
+             inOrderTraversal(root.right);
+
+        }
+    }
+     public static void postOrderTraversal(Node root){
+        if(root!=null){
+            
+             postOrderTraversal(root.left);
+             postOrderTraversal(root.right);
+              System.out.print(root.val+" ");
+
+        }
+    }
+    public static Node binaryTree(int inorder[], int postorder[], int inStart, int inEnd){
+        if(inStart>inEnd)
+            return null;
+
+        int data = postorder[postOrderIdx];
+        Node curRootnode = new Node(data);
+        postOrderIdx--;
+        int inorderIndex = search(inorder, inStart, inEnd, data);
+        curRootnode.right = binaryTree(inorder, postorder, inorderIndex+1,inEnd);
+        curRootnode.left = binaryTree(inorder, postorder, inStart, inorderIndex-1);
+        return curRootnode;
+    }
+
+     public static int search(int[] inOrder, int inStart, int inEnd, int key){
+
+        for(int i=inStart; i<=inEnd;i++){
+            if(key==inOrder[i])
+            return i;
+        }
+        return -1;
+    }
+}
